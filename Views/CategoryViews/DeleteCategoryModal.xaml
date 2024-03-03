@@ -1,0 +1,40 @@
+﻿<Window x:Class="POS.Views.Category.DeleteCategoryModal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POS.Views.Category"
+        mc:Ignorable="d"
+        Title="DeleteCategoryModal" Height="175" Width="390"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+    <Window.Background>
+        <SolidColorBrush Color="White"/>
+    </Window.Background>
+    <Window.Resources>
+        <Style TargetType="Window">
+            <Setter Property="WindowChrome.WindowChrome">
+                <Setter.Value>
+                    <WindowChrome CaptionHeight="0" ResizeBorderThickness="8" CornerRadius="10"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!-- TextBlock for confirmation message -->
+        <TextBlock Grid.Row="0" Margin="10" FontSize="17" FontWeight="Medium" Text="Are you sure you want to delete this category?" VerticalAlignment="Center"/>
+
+        <!-- StackPanel to contain the buttons -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10">
+            <!-- Button for confirming deletion -->
+            <Button Content="Yes, Delete" Background="Red" Margin="5" Click="btnYesDelete_Click"/>
+
+            <!-- Button for canceling deletion -->
+            <Button Content="Cancel" Margin="5" Click="btnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
